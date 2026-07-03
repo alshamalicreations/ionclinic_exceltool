@@ -1,105 +1,159 @@
-# 🏥 IonClinic Excel Tool
+# 🚀 TemplateMapper
 
-A professional desktop application for migrating Excel-based clinic data into the **IonClinic Backup** format.
+> **Universal Data Migration Platform**
 
-IonClinic Excel Tool automatically detects patient records, treatment history, payment history, and other clinic data from Excel workbooks, converts them into the IonClinic backup schema, validates the data, and generates a ready-to-import backup file.
+TemplateMapper is a professional desktop application designed to migrate data between clinic management systems and standardized templates.
+
+Its architecture is built around **importers**, **exporters**, and **mapping engines**, allowing support for multiple source systems and multiple destination templates.
+
+The first supported workflow is:
+
+**DERMA Excel ➜ IonClinic Backup**
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-### 📂 Excel Processing
+## 📂 Import Engine
 
 - Read Excel workbooks (`.xlsx`)
-- Automatically detect worksheet types
-- Analyze workbook structure
-- Preview detected data before migration
-
-### 👤 Patient Migration
-
-- Import patient records
-- Generate unique patient IDs (UUIDs)
-- Preserve patient relationships
-- Clean and validate patient information
-
-### 📅 Appointment Migration
-
-- Import treatment history
-- Convert treatments into appointments
-- Preserve appointment dates
-- Link appointments to patients
-
-### 💳 Payment Migration
-
-- Import payment history
-- Calculate total paid
-- Calculate remaining balance
-- Preserve payment methods and payment dates
-
-### ✅ Data Validation
-
-- Detect duplicate patients
-- Detect invalid phone numbers
-- Detect invalid dates
-- Detect missing required fields
-- Generate validation reports
-- Automatically clean common data issues
-
-### 📄 Export
-
-- Generate IonClinic-compatible backup
-- Export migration reports
-- Save migration logs
-- Preserve workbook integrity
+- Automatic source detection
+- Modular importer architecture
+- Extensible mapping system
 
 ---
 
-# 🚀 Version Roadmap
+## 👤 Patient Migration
+
+- Import patient records
+- Preserve patient relationships
+- Generate UUIDs
+- Data normalization
+- Duplicate detection
+
+---
+
+## 📅 Appointment Migration
+
+- Convert treatment history into appointments
+- Preserve treatment dates
+- Preserve treatment names
+- Maintain patient relationships
+
+---
+
+## 💳 Payment Migration
+
+- Import payment history
+- Preserve payment methods
+- Preserve payment dates
+- Calculate balances
+- Link payments to patients
+
+---
+
+## 📄 Export Engine
+
+- Generate IonClinic-compatible backup files
+- Timestamped exports
+- Workbook integrity validation
+- Automatic column sizing
+
+---
+
+## ⚙️ Desktop Application
+
+- Modern PySide6 interface
+- Background processing
+- Live progress tracking
+- Migration log
+- Responsive UI
+- Read-only path selection
+- Professional desktop experience
+
+---
+
+# 🧩 Supported Importers
+
+| Source | Status |
+|---------|--------|
+| DERMA Excel | ✅ Supported |
+
+---
+
+# 📦 Supported Export Templates
+
+| Template | Status |
+|----------|--------|
+| IonClinic Backup | ✅ Supported |
+
+---
+
+# 🛣️ Roadmap
 
 ## Version 1.0
 
--  Derma Excel Migration
--  Patient Import
--  Appointment Import
--  Payment Import
--  Backup Export
+- ✅ DERMA Importer
+- ✅ Patient Migration
+- ✅ Appointment Migration
+- ✅ Payment Migration
+- ✅ IonClinic Exporter
+- ✅ Background Worker
+- ✅ Progress Tracking
+- ✅ Desktop GUI
 
 ---
 
 ## Version 1.1
 
-- Custom Excel Mapping
-- User-defined column mapping
-- Save mapping profiles
+- ⏳ Migration Summary
+- ⏳ ETA Estimation
+- ⏳ Remember Previous Paths
+- ⏳ Better Validation Reports
 
 ---
 
 ## Version 1.2
 
-- Drag & Drop Excel Files
-- Batch Processing
-- Faster Import Engine
-
----
-
-## Version 1.3
-
-- Arabic Interface
-- English Interface
-- Theme Support
+- ⏳ Drag & Drop
+- ⏳ Batch Migration
+- ⏳ Faster Processing
+- ⏳ Multi-threaded Export
 
 ---
 
 ## Version 2.0
 
-### Plugin System
-
-Supported Importers:
-
+### New Importers
 
 - DentalSoft
 - EasyClinic
+- CSV Import
 - Custom Excel Importers
+
+### New Exporters
+
+- Additional clinic management systems
+- Custom template support
+
+---
+
+# 🏗️ Project Architecture
+
+```
+TemplateMapper
+│
+├── assets
+├── engine
+├── exporters
+├── gui
+├── importers
+├── mappings
+├── models
+├── services
+├── writers
+└── tests
+```
 
 ---
 
@@ -114,35 +168,44 @@ Supported Importers:
 
 ---
 
-# 📌 Project Status
+# 📌 Current Status
 
-🚧 **Currently under active development**
+🚧 **Actively under development**
 
-The first release focuses on migrating Derma Excel workbooks into the IonClinic Backup format.
+The first stable release focuses on migrating **DERMA Excel workbooks** into the **IonClinic Backup** format.
+
+The architecture is designed to support additional source systems and export templates in future releases.
 
 ---
 
 # 🤝 Contributing
 
-Contributions, bug reports, feature requests, and suggestions are welcome.
+Contributions are welcome.
 
-If you'd like to contribute:
+You can help by:
 
-1. Fork the repository.
-2. Create a feature branch.
-3. Commit your changes.
-4. Open a Pull Request.
+- Reporting bugs
+- Suggesting new features
+- Improving documentation
+- Adding new importers
+- Adding new exporters
 
 ---
 
 # 📄 License
 
-This project is licensed under the **MIT License**.
+Licensed under the **MIT License**.
+
+---
+
+# 👨‍💻 Author
+
+Developed by **Rayyan Alshamali**
 
 ---
 
 # ⭐ Support
 
-If you find this project useful, please consider giving it a **⭐ Star** on GitHub.
+If you find TemplateMapper useful, consider giving the repository a **⭐ Star**.
 
-It helps others discover the project and supports future development.
+It helps support future development and makes the project easier for others to discover.
