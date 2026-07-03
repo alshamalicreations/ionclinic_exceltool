@@ -15,8 +15,19 @@ from models.payment import Payment
 
 class BaseImporter(ABC):
 
-    def __init__(self, workbook: Workbook):
+    def __init__(
+        self,
+        workbook: Workbook,
+        tracker=None,
+    ):
+
         self.workbook = workbook
+        self.tracker = tracker
+
+    def advance_progress(self):
+
+        if self.tracker:
+            self.tracker.advance()
 
     @abstractmethod
     def read_patients(self) -> list[Patient]:

@@ -14,7 +14,7 @@ QWidget {
 
 QLabel {
     color: #E8EAED;
-    font-size: 10pt;
+    font-size: 9pt;
 }
 
 QLineEdit {
@@ -23,6 +23,7 @@ QLineEdit {
     border-radius: 8px;
     padding: 8px;
     color: white;
+    font-size: 9pt;
     selection-background-color: #4F8EF7;
 }
 
@@ -36,7 +37,7 @@ QPushButton {
     border: none;
     border-radius: 8px;
     padding: 10px;
-    font-size: 10pt;
+    font-size: 9pt;
     font-weight: 600;
 }
 

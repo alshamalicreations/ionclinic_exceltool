@@ -11,10 +11,18 @@ from uuid import uuid4
 
 class PaymentWriter:
 
-    def __init__(self, workbook, tracker=None):
+    def __init__(
+        self,
+        workbook,
+        clinic_id,
+        tracker=None,
+    ):
 
         self.workbook = workbook
         self.sheet = workbook["payments"]
+
+        self.clinic_id = clinic_id
+
         self.tracker = tracker
 
     def write(self, patients):
@@ -29,7 +37,7 @@ class PaymentWriter:
 
                 self.sheet.cell(row=row, column=1).value = str(uuid4())
 
-                self.sheet.cell(row=row, column=2).value = 1
+                self.sheet.cell(row=row, column=2).value = self.clinic_id
 
                 self.sheet.cell(row=row, column=3).value = patient.id
 

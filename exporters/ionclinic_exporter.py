@@ -18,12 +18,17 @@ class IonClinicExporter:
     def __init__(
         self,
         template_path: str,
+        clinic_id: str,
         tracker=None,
     ):
 
         self.template_path = Path(template_path)
 
-        self.workbook = load_workbook(self.template_path)
+        self.workbook = load_workbook(
+            self.template_path
+        )
+
+        self.clinic_id = clinic_id
 
         self.tracker = tracker
 
@@ -31,6 +36,7 @@ class IonClinicExporter:
 
         PatientWriter(
             self.workbook,
+            self.clinic_id,
             self.tracker,
         ).write(patients)
 
@@ -38,6 +44,7 @@ class IonClinicExporter:
 
         AppointmentWriter(
             self.workbook,
+            self.clinic_id,
             self.tracker,
         ).write(patients)
 
@@ -45,6 +52,7 @@ class IonClinicExporter:
 
         PaymentWriter(
             self.workbook,
+            self.clinic_id,
             self.tracker,
         ).write(patients)
 

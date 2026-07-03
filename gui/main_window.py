@@ -119,6 +119,11 @@ class MainWindow(QWidget):
         self.output_edit = QLineEdit()
         self.output_edit.setReadOnly(True)
 
+        self.clinic_id_edit = QLineEdit()
+        self.clinic_id_edit.setPlaceholderText(
+        "Enter your IonClinic Clinic ID"
+)
+
         self.source_button = QPushButton("Browse")
         self.template_button = QPushButton("Browse")
         self.output_button = QPushButton("Browse")
@@ -181,12 +186,24 @@ class MainWindow(QWidget):
             2,
             1,
         )
-
         grid.addWidget(
             self.output_button,
-            2,
-            2,
+             2,
+             2,
         )
+
+        grid.addWidget(
+           QLabel("IonClinic Clinic ID"),
+           3,
+           0,
+        )
+        grid.addWidget(
+        self.clinic_id_edit,
+         3,
+         1,
+         1,
+         2,
+        )     
 
         layout.addLayout(grid)
 
@@ -333,8 +350,14 @@ class MainWindow(QWidget):
         source = self.source_edit.text().strip()
         template = self.template_edit.text().strip()
         output = self.output_edit.text().strip()
+        clinic_id = self.clinic_id_edit.text().strip()
 
-        if not source or not template or not output:
+        if (
+    not source
+    or not template
+    or not output
+    or not clinic_id
+):
 
             QMessageBox.warning(
                 self,
@@ -348,6 +371,7 @@ class MainWindow(QWidget):
             source_file=source,
             template_file=template,
             output_folder=output,
+            clinic_id=clinic_id,
         )
 
         self.start_button.setEnabled(False)

@@ -10,10 +10,18 @@ from datetime import datetime
 
 class PatientWriter:
 
-    def __init__(self, workbook, tracker=None):
+    def __init__(
+        self,
+        workbook,
+        clinic_id,
+        tracker=None,
+    ):
 
         self.workbook = workbook
         self.sheet = workbook["patients"]
+
+        self.clinic_id = clinic_id
+
         self.tracker = tracker
 
     def write(self, patients):
@@ -25,7 +33,7 @@ class PatientWriter:
         for patient in patients:
 
             self.sheet.cell(row=row, column=1).value = patient.id
-            self.sheet.cell(row=row, column=2).value = 1
+            self.sheet.cell(row=row, column=2).value = self.clinic_id
             self.sheet.cell(row=row, column=3).value = patient.full_name
             self.sheet.cell(row=row, column=4).value = patient.phone_number
             self.sheet.cell(row=row, column=5).value = patient.birth_date

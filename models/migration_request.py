@@ -16,3 +16,5 @@ class MigrationRequest:
     template_file: str
 
     output_folder: str
+
+    clinic_id: str

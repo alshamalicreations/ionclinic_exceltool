@@ -167,6 +167,8 @@ class MigrationEngine:
         exporter = IonClinicExporter(
 
             request.template_file,
+            
+            clinic_id=request.clinic_id,
 
             tracker=tracker,
 
